@@ -1,0 +1,66 @@
+A_3P
+A_2P A_PL A_Phys
+A_noun A_2P A_PL A_Anthro
+table A_noun A_3P A_PL A_Phys A_Spec A_UndefGiven
+2 we A_pronoun A_1P A_PL A_Hum A_Def A_Given
+1 A_1P A_SG A_Hum A_Def A_Given P_3P P_SG P_Phys P_Def P_Given
+1 A_1P A_SG A_Hum A_Def A_Given P_1P P_SG P_Hum P_Def P_Given
+1 A_1P A_SG A_Hum A_Def A_Given P_1P P_SG P_Hum P_Def P_Given
+1 A_1P A_SG A_Hum A_Def A_Given P_1P P_SG P_Hum P_Def P_Given NA NA NA NA
+1 A_1P A_SG A_Hum A_Def A_Given P_1P P_SG P_Hum P_Def P_Given NA NA NA NA
+1 A_1P A_SG A_Hum A_Def A_Given P_1P P_SG P_Hum P_Def P_Given NA NA NA NA
+1 A_1P A_SG A_Hum A_Def A_Given P_1P P_SG P_Hum P_Def P_Given NA NA NA NA
+NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+1 A_1P A_SG A_Hum A_Def A_Given P_1P P_SG P_Hum P_Def P_Given NA NA NA NA
+1 A_1P A_SG A_Hum A_Def A_Given P_1P P_SG P_Hum P_Def P_Given NA NA NA NA
+1 A_1P A_SG A_Hum A_Def A_Given P_1P P_SG P_Hum P_Def P_Given NA NA NA NA
+1 A_1P A_SG A_Hum A_Def A_Given P_1P P_SG P_Hum P_Def P_Given NA NA NA NA
+1
+A_1P
+A_SG
+A_Hum
+A_Def
+A_Given
+table
+A_pronoun
+A_PropNoun
+P_1P
+P_SG
+P_Hum
+P_Def
+P_Given
+NA
+NA
+NA
+1 A_3P A_PL A_Hum A_NonSpec A_Given table A_noun A_ComNoun P_1P P_SG P_Anim P_Def P_Given NA NA NA
+2 A_1P A_PL A_Hum A_Def A_Given we A_pronoun A_PersPro P_3P P_SG P_Abstr P_Def P_Given Shiny P_noun P_noun
+1 A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+2 2 1 A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Sub Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos code NA A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
+1 Clause_Main Clause_Pos Clause_Pres NA A_1P A_SG A_Hum A_Def A_Given NA NA NA P_1P P_SG P_Hum P_Def P_Given NA NA NA
