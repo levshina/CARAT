@@ -1,3 +1,0 @@
-1	I test the code.
-2	We use Shiny.
-3	He comes.
