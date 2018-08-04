@@ -1,3 +1,0 @@
-13 Clause_Main Clause_Pos A_2P A_SG A_Phys A_Def A_Given девочка A_pronoun A_PropNoun P_1P P_SG P_Hum P_Def P_Given NA NA NA
-3 Clause_Main Clause_Pos Clause_Pres будить A_undefP A_undefN A_Hum A_NAIdent A_NAGiven NA NA NA P_3P P_SG P_Hum P_Def P_Given ребенок P_noun P_ComNoun
-3 Clause_Main Clause_Pos Clause_Pres будить A_impersP A_impersN A_Hum A_NAIdent A_NAGiven NA NA NA P_3P P_SG P_Hum P_Def P_Given ребенок P_noun P_ComNoun
