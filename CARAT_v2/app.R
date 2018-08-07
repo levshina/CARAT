@@ -1,5 +1,5 @@
 #Author: Natalia Levshina
-#Date of last change: 03.08.2018
+#Date of last change: 08.08.2018
 #Version: 0.2
 #New:
 #1. Open the file with the corpus from Shiny
@@ -183,7 +183,7 @@ tabPanel(
     
 
     fluidRow(column(width = 4, selectInput(inputId = "P_Person", label = h4("Person of P"), 
-                                           choices = list("1st Person" = "P_1P", "2nd Person" = "P_2P", "3rd Person" = "P_3P", "Difficult to say" = "P_undefP", "Clause" = "P_clauseN"), 
+                                           choices = list("1st Person" = "P_1P", "2nd Person" = "P_2P", "3rd Person" = "P_3P", "Difficult to say" = "P_undefP", "Clause" = "P_clauseP"), 
                                            selected = 1)
                      ),
              column(width = 4, selectInput(inputId = "P_Number", label = h4("Number of P"), 
@@ -341,7 +341,7 @@ output$ui_explicit <- renderUI({
                                                    selected = 1)
                   ),
           column(width = 4, selectInput(inputId = "A_Subcat", label = h4("Subcategory of A Head"), 
-                                                   choices = list("Personal Pronoun" = "A_PersPro", "Common Noun" = "A_ComNoun", "Proper Noun (persons, institutions, places)" = "A_PropNoun", "Possessive Pronoun" = "A_PossPro", "Demonstrative Pronoun" = "A_DemPro", "Interrogative Pronoun" = "A_InterPro", "Other" = "A_OthPro"), 
+                                                   choices = list("Personal Pronoun" = "A_PersPro", "Common Noun" = "A_ComNoun", "Proper Noun (persons, institutions, places)" = "A_PropNoun", "Possessive Pronoun" = "A_PossPro", "Demonstrative Pronoun" = "A_DemPro", "Interrogative Pronoun" = "A_InterPro", "Other" = "A_OthSubcat"), 
                                                    selected = 1
                                                    )
                   )
@@ -357,11 +357,11 @@ output$ui_explicitP <- renderUI({
                                          )
                     ),
             column(width = 4, selectInput(inputId = "P_POS", label = h4("Part of Speech of P Head"), 
-                                                   choices = list("Pronoun" = "P_pronoun", "Noun" = "P_noun", "Adjective" = "P_adj", "Other" = "P_other"), 
+                                                   choices = list("Pronoun" = "P_pronoun", "Noun" = "P_noun", "Adjective" = "P_adj", "Other" = "P_otherPOS"), 
                                                    selected = 1)
                    ),
           column(width = 4, selectInput(inputId = "P_Subcat", label = h4("Subcategory of P Head"), 
-                                                   choices = list("Personal Pronoun" = "P_PersPro", "Common Noun" = "P_ComNoun", "Proper Noun (persons, institutions, places)" = "P_PropNoun", "Possessive Pronoun" = "P_PossPro", "Demonstrative Pronoun" = "P_DemPro", "Interrogative Pronoun" = "P_InterPro", "Other" = "P_OthPro"), 
+                                                   choices = list("Personal Pronoun" = "P_PersPro", "Common Noun" = "P_ComNoun", "Proper Noun (persons, institutions, places)" = "P_PropNoun", "Possessive Pronoun" = "P_PossPro", "Demonstrative Pronoun" = "P_DemPro", "Interrogative Pronoun" = "P_InterPro", "Other" = "P_OthSubcat"), 
                                                    selected = 1)
                  )
           )
