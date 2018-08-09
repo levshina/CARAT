@@ -1,12 +1,13 @@
 #Author: Natalia Levshina
-#Date of last change: 08.08.2018
+#Date of last change: 09.08.2018
 #Version: 0.2
 #New:
 #1. Open the file with the corpus from Shiny
 #2. Correction: if no nominal A or P -> no pronoun/noun and no subcategory (NA, NA, NA)
 #3. Reordered some of the default values, for convenience
 #4. Changed identifiability
-
+#5. Added write.table fileEncoding (utf-8)
+#6. Negative pronouns also have NA identifiability and NA givenness (see the interface text)
 
 #To-do list: 
 #1. Go to sentence (?)
@@ -93,7 +94,7 @@ mainPanel(
         #       actionButton("confirmSentenceID", "Go"),
         # 
           hr(),     
-          "Code the sentence if it is transitive.", br(),
+          "Code the sentence if it is transitive (even if some arguments are not encoded explicitly).", br(),
           actionButton("buttonCode", h4("Code the sentence"), style="color: #fff; background-color: #337ab7; border-color: #2e6da4"),
                
           hr(),
@@ -155,20 +156,20 @@ tabPanel(
                   ),
 
           column(width = 4, selectInput(inputId = "A_Ident", label = h4("Identifiability of A"), 
-                                choices = list("A is unique in its kind, anaphoric or identifiable from context" = "A_Def", "One can replace A with 'a certain/particular A'" = "A_Spec", "Generic use" = "A_Gen", "Other" = "A_NonSpec", "Difficult to say" = "A_UndefIdent", "Not applicable (interrogative and impersonal pronouns, clauses, etc.)" = "A_NAIdent"), 
+                                choices = list("A is unique in its kind, anaphoric or identifiable from context (definite)" = "A_Def", "One can replace A with 'a certain/particular A' (specific)" = "A_Spec", "Generic use" = "A_Gen", "Other (non-specific)" = "A_NonSpec", "Difficult to say" = "A_UndefIdent", "Not applicable (interrogative, negative and impersonal pronouns, clauses, etc.)" = "A_NAIdent"), 
                                 selected = 1)
                  ),
           column(width = 4, selectInput(inputId = "A_Given", label = h4("Givenness of A"), 
-                                            choices = list("Given (mentioned previously or inferrable from context)" = "A_Given", "New (neither mentioned, nor inferrable)" = "A_New", "Difficult to say" = "A_UndefGiven", "Not applicable (interrogative and impersonal pronouns, clauses, etc.)" = "A_NAGiven"), 
+                                            choices = list("Given (mentioned previously or inferrable from context)" = "A_Given", "New (neither mentioned, nor inferrable)" = "A_New", "Difficult to say" = "A_UndefGiven", "Not applicable (interrogative, negative and impersonal pronouns, clauses, etc.)" = "A_NAGiven"), 
                                             selected = 1)
                  )
           ),
-      fluidRow(column(width = 2, wellPanel(radioButtons("A_radio", label = h4("Is A a nominal?"),
-                            choices = list("Yes" = 1, "No" = 2), 
+      fluidRow(column(width = 3, wellPanel(radioButtons("A_radio", label = h4("Is A a nominal?"),
+                            choices = list("Yes" = 1, "No (e.g. implicit, clausal, Mary's [book])" = 2), 
                             selected = 2)
                             )
                       ), 
-               column(width = 10, wellPanel(uiOutput("ui_explicit")
+               column(width = 9, wellPanel(uiOutput("ui_explicit")
                                             )
                       )
                ),
@@ -200,23 +201,23 @@ tabPanel(
                 ),
     
      column(width = 4, selectInput(inputId = "P_Ident", label = h4("Identifiability of P"), 
-                                           choices = list("P is unique in its kind, anaphoric or identifiable from context" = "P_Def", "One can replace P with 'a certain/particular P'" = "P_Spec", "Generic use" = "P_Gen", "Other" = "P_NonSpec", "Difficult to say" = "P_UndefIdent", "Not applicable (interrogative and impersonal pronouns, clauses, etc.)" = "P_NAIdent"), 
+                                           choices = list("P is unique in its kind, anaphoric or identifiable from context (definite)" = "P_Def", "One can replace P with 'a certain/particular P' (specific)" = "P_Spec", "Generic use" = "P_Gen", "Other (non-specific)" = "P_NonSpec", "Difficult to say" = "P_UndefIdent", "Not applicable (interrogative, negative and impersonal pronouns, clauses, etc.)" = "P_NAIdent"), 
                                            selected = 1)
             ),
     column(width = 4, selectInput(inputId = "P_Given", label = h4("Givenness of P"), 
-                                           choices = list("Given (mentioned previously or inferrable from context)" = "P_Given", "New (neither mentioned, nor inferrable)" = "P_New", "Difficult to say" = "P_UndefGiven", "Not applicable (interrogative and impersonal pronouns, clauses, etc.)" = "P_NAGiven"), 
+                                           choices = list("Given (mentioned previously or inferrable from context)" = "P_Given", "New (neither mentioned, nor inferrable)" = "P_New", "Difficult to say" = "P_UndefGiven", "Not applicable (interrogative, negative and impersonal pronouns, clauses, etc.)" = "P_NAGiven"), 
                                            selected = 1)
            )
     ),
     
-    fluidRow(column(width = 2, wellPanel(radioButtons("P_radio", label = h4("Is P a nominal?"),
-                           choices = list("Yes" = 1, "No" = 2), 
+    fluidRow(column(width = 3, wellPanel(radioButtons("P_radio", label = h4("Is P a nominal?"),
+                           choices = list("Yes" = 1, "No (e.g. implicit, clausal, Mary's [book])" = 2), 
                            selected = 2)
                            )
                     )
              ,
     
-            column(width = 10, wellPanel(uiOutput("ui_explicitP")
+            column(width = 9, wellPanel(uiOutput("ui_explicitP")
                                          )
                    )
             ),
@@ -341,7 +342,7 @@ output$ui_explicit <- renderUI({
                                                    selected = 1)
                   ),
           column(width = 4, selectInput(inputId = "A_Subcat", label = h4("Subcategory of A Head"), 
-                                                   choices = list("Personal Pronoun" = "A_PersPro", "Common Noun" = "A_ComNoun", "Proper Noun (persons, institutions, places)" = "A_PropNoun", "Possessive Pronoun" = "A_PossPro", "Demonstrative Pronoun" = "A_DemPro", "Interrogative Pronoun" = "A_InterPro", "Other" = "A_OthSubcat"), 
+                                                   choices = list("Personal Pronoun" = "A_PersPro", "Common Noun" = "A_ComNoun", "Proper Noun (persons, institutions, places, book titles, etc.)" = "A_PropNoun", "Possessive Pronoun" = "A_PossPro", "Demonstrative Pronoun" = "A_DemPro", "Interrogative Pronoun" = "A_InterPro", "Other" = "A_OthSubcat"), 
                                                    selected = 1
                                                    )
                   )
@@ -361,7 +362,7 @@ output$ui_explicitP <- renderUI({
                                                    selected = 1)
                    ),
           column(width = 4, selectInput(inputId = "P_Subcat", label = h4("Subcategory of P Head"), 
-                                                   choices = list("Personal Pronoun" = "P_PersPro", "Common Noun" = "P_ComNoun", "Proper Noun (persons, institutions, places)" = "P_PropNoun", "Possessive Pronoun" = "P_PossPro", "Demonstrative Pronoun" = "P_DemPro", "Interrogative Pronoun" = "P_InterPro", "Other" = "P_OthSubcat"), 
+                                                   choices = list("Personal Pronoun" = "P_PersPro", "Common Noun" = "P_ComNoun", "Proper Noun (persons, institutions, places, book titles, etc.)" = "P_PropNoun", "Possessive Pronoun" = "P_PossPro", "Demonstrative Pronoun" = "P_DemPro", "Interrogative Pronoun" = "P_InterPro", "Other" = "P_OthSubcat"), 
                                                    selected = 1)
                  )
           )
@@ -448,7 +449,7 @@ if (input$P_radio == 2){
 
 
 
-write.table(data.frame(t(c(outmatrixClause, outmatrixA, outmatrixP))), input$inputsLocation, row.names = FALSE, col.names = FALSE, quote = FALSE, append = TRUE, sep = ",")
+write.table(data.frame(t(c(outmatrixClause, outmatrixA, outmatrixP))), input$inputsLocation, row.names = FALSE, col.names = FALSE, quote = FALSE, append = TRUE, sep = ",", fileEncoding = "utf-8")
 })
 
 observeEvent(input$goToStart, {
